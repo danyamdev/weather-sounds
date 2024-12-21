@@ -8,11 +8,14 @@ const setPath = (paths) => path.resolve(__dirname, ...paths)
 
 module.exports = {
 	context: setPath([levelUp, 'src']),
-	entry: './index.js',
+	entry: './index.ts',
 	output: {
 		filename: '[name].[contenthash].js',
 		path: setPath([levelUp, 'dist']),
 		clean: true
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -34,7 +37,12 @@ module.exports = {
 			{
 				test: /\.s[ac]ss$/i,
 				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-			}
+			},
+			{
+				test: /\.[tj]sx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 		]
 	}
 }
