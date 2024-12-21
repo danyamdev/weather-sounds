@@ -1,3 +1,31 @@
+@import "./fonts.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DCDCDC;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 920px;
+  width: 100%;
+  margin: 30px auto;
+}
+
 .title {
-  color: #FFA500;
+  color: #CD6D00;
+  text-align: center;
+  text-transform: uppercase;
 }
