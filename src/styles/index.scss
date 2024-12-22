@@ -1,4 +1,4 @@
-@import "./fonts.css";
+@use "./fonts.css";
 
 * {
   margin: 0;
@@ -15,17 +15,69 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #DCDCDC;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  filter: blur(5px);
 }
 
 .wrapper {
-  max-width: 920px;
   width: 100%;
   margin: 30px auto;
 }
 
 .title {
+  margin-bottom: 30px;
   color: #CD6D00;
   text-align: center;
   text-transform: uppercase;
+  position: relative;
+}
+
+.weather-sounds {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .sound {
+    border: 1px solid white;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &_view {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      transition: all 0.5s ease 0s;
+
+      &:hover {
+        scale: 1.1;
+      }
+
+      &-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &-icon {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+      }
+    }
+  }
 }
