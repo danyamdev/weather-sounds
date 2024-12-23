@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Версия JavaScript, в которую будет транслироваться код
+    "module": "commonjs", // Тип модуля (можно использовать также "esnext", "amd", "umd", и т.д.)
+    "outDir": "./dist", // Папка для выходных файлов
+    "sourceMap": true, // Включает создание файлов с исходными картами, что позволяет отлаживать ваш TypeScript, показывая оригинальные строки кода в инструментах разработчика.
+    "strict": true, // Включает все проверки строгой типизации
+    "esModuleInterop": true, // Позволяет использовать ES6 модули с CommonJS
+    "skipLibCheck": true, // Пропуск проверки типов для файлов .d.ts
+    "forceConsistentCasingInFileNames": true, // Принудительное соблюдение регистров имен файлов
+    "noImplicitAny": true, // Запрет неявного типа any
+    "strictNullChecks": true, // Строгая проверка на null и undefined
+  },
+  "include": ["src/**/*", "declarations.d.ts"], // Какие файлы включать в компиляцию
+  "exclude": ["node_modules", "**/*.spec.ts"] // Какие файлы/папки исключать из компиляции
+}
