@@ -1,13 +1,14 @@
+import { WeatherSound } from './types'
 import { ClassNames } from './constants'
-import { WeatherSoundsData, WeatherSound } from './scripts/weather-sounds'
-import './styles/index.scss'
+import { WeatherSoundsData } from './mocks'
+import './assets/styles/index.scss'
 
 const overlay = document.querySelector(`.${ClassNames.overlay}`) as HTMLDivElement
 const weatherSoundsContainer = document.querySelector(`.${ClassNames.weatherSounds}`) as HTMLDivElement
 
-const renderWeatherSoundItem = (sound: WeatherSound, index: number ): void => {
+const renderWeatherSoundItem = (sound: WeatherSound ): void => {
   const soundHtml = `
-  <div data-id="${index + 1}" class="${ClassNames.sound}">
+  <div data-id="${sound.id}" class="${ClassNames.sound}">
     <div class="${ClassNames.soundView}">
       <img class="${ClassNames.soundView}-bg" src="${sound.bgPath}" alt="${sound.weather}-bg" />
       <img class="${ClassNames.soundView}-icon" src="${sound.iconPath}" alt="${sound.weather}-icon" />

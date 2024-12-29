@@ -1,4 +1,6 @@
-export const ClassNames = {
+type ClassNames = 'overlay' | 'active' | 'weatherSounds' | 'soundAudio' | 'sound' | 'soundView' | 'soundRange'
+
+export const ClassNames: Record<ClassNames, string> = {
   overlay: 'overlay',
   active: 'active',
   weatherSounds: 'weather-sounds',

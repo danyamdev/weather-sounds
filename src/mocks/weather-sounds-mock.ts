@@ -1,6 +1,6 @@
-import SummerBg from '../assets/summer-bg.jpg'
-import RainyBg from '../assets/rainy-bg.jpg'
-import WinterBg from '../assets/winter-bg.jpg'
+import SummerBg from '../assets/backgrounds/summer-bg.jpg'
+import RainyBg from '../assets/backgrounds/rainy-bg.jpg'
+import WinterBg from '../assets/backgrounds/winter-bg.jpg'
 import SunIcon from '../assets/icons/sun.svg'
 import CloudRainIcon from '../assets/icons/cloud-rain.svg'
 import CloudSnowIcon from '../assets/icons/cloud-snow.svg'
@@ -8,32 +8,27 @@ import SummerMP3 from '../assets/sounds/summer.mp3'
 import RainMP3 from '../assets/sounds/rain.mp3'
 import WinterMP3 from '../assets/sounds/winter.mp3'
 
-export type WeatherSound = {
-  id: number
-  weather: 'summer' | 'rainy' | 'winter'
-  bgPath: string
-  iconPath: string
-  audioPath: string
-}
+import { WeatherSound } from '../types';
+import { WeatherNamesEnum } from '../enums';
 
 export const WeatherSoundsData: WeatherSound[] = [
   {
     id: 1,
-    weather: 'summer',
+    weather: WeatherNamesEnum.Summer,
     bgPath: SummerBg,
     iconPath: SunIcon,
     audioPath: SummerMP3
   },
   {
     id: 2,
-    weather: 'rainy',
+    weather: WeatherNamesEnum.Rainy,
     bgPath: RainyBg,
     iconPath: CloudRainIcon,
     audioPath: RainMP3
   },
   {
     id: 3,
-    weather: 'winter',
+    weather: WeatherNamesEnum.Winter,
     bgPath: WinterBg,
     iconPath: CloudSnowIcon,
     audioPath: WinterMP3
