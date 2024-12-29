@@ -8,10 +8,10 @@ import SummerMP3 from '../assets/sounds/summer.mp3'
 import RainMP3 from '../assets/sounds/rain.mp3'
 import WinterMP3 from '../assets/sounds/winter.mp3'
 
-import { WeatherSound } from '../types';
+import { IWeatherSound } from '../types';
 import { WeatherNamesEnum } from '../enums';
 
-export const WeatherSoundsData: WeatherSound[] = [
+export const WeatherSoundsData: IWeatherSound[] = [
   {
     id: 1,
     weather: WeatherNamesEnum.Summer,

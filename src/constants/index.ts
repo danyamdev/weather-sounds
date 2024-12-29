@@ -9,3 +9,5 @@ export const ClassNames: Record<ClassNames, string> = {
   soundView: 'sound_view',
   soundRange: 'sound_range'
 }
+
+export const DEFAULT_INITIAL_VOLUME = 50

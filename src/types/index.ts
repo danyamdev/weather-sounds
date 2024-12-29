@@ -1,6 +1,6 @@
 import { WeatherNamesEnum } from '../enums';
 
-export interface WeatherSound {
+export interface IWeatherSound {
   id: number
   weather: WeatherNamesEnum
   bgPath: string
