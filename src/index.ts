@@ -1,13 +1,15 @@
-import { ClassNames } from './constants'
-import { WeatherSoundsData, WeatherSound } from './scripts/weather-sounds'
-import './styles/index.scss'
+import './assets/styles/index.scss'
+
+import { IWeatherSound } from './types'
+import { WeatherSoundsData } from './mocks'
+import { ClassNames, DEFAULT_INITIAL_VOLUME } from './constants'
 
 const overlay = document.querySelector(`.${ClassNames.overlay}`) as HTMLDivElement
 const weatherSoundsContainer = document.querySelector(`.${ClassNames.weatherSounds}`) as HTMLDivElement
 
-const renderWeatherSoundItem = (sound: WeatherSound, index: number ): void => {
+const renderWeatherSoundItem = (sound: IWeatherSound ): void => {
   const soundHtml = `
-  <div data-id="${index + 1}" class="${ClassNames.sound}">
+  <div data-id="${sound.id}" class="${ClassNames.sound}">
     <div class="${ClassNames.soundView}">
       <img class="${ClassNames.soundView}-bg" src="${sound.bgPath}" alt="${sound.weather}-bg" />
       <img class="${ClassNames.soundView}-icon" src="${sound.iconPath}" alt="${sound.weather}-icon" />
@@ -39,7 +41,7 @@ const updateBackgroundForContainer = (soundElement: HTMLDivElement): void => {
 }
 
 const initializeVolume = (weatherSounds: NodeListOf<Element>) => {
-  const initialVolume = 50
+  const initialVolume = DEFAULT_INITIAL_VOLUME
 
   weatherSounds.forEach(weatherSound => {
     const audio = weatherSound.querySelector(`.${ClassNames.soundAudio}`) as HTMLAudioElement;

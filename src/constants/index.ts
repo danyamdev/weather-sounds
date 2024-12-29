@@ -1,4 +1,6 @@
-export const ClassNames = {
+type ClassNames = 'overlay' | 'active' | 'weatherSounds' | 'soundAudio' | 'sound' | 'soundView' | 'soundRange'
+
+export const ClassNames: Record<ClassNames, string> = {
   overlay: 'overlay',
   active: 'active',
   weatherSounds: 'weather-sounds',
@@ -7,3 +9,5 @@ export const ClassNames = {
   soundView: 'sound_view',
   soundRange: 'sound_range'
 }
+
+export const DEFAULT_INITIAL_VOLUME = 50
